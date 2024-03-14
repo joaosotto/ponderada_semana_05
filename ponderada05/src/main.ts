@@ -6,6 +6,6 @@ dotenv.config();
 
 async function bootstrap() {
   const app = await NestFactory.create(MusicaModule);
-  await app.listen(5500);
+  await app.listen(5050);
 }
 bootstrap();
