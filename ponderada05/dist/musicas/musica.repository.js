@@ -19,7 +19,7 @@ let MusicaRepository = class MusicaRepository {
     constructor(pool) {
         this.pool = pool;
     }
-    async findAll() {
+    async getAll() {
         console.log('tenta conectar');
         const client = await this.pool.connect();
         try {

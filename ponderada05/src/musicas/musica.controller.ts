@@ -7,7 +7,7 @@ export class MusicasController {
 
   @Get('/musicas')
   async getAll(): Promise<any> {
-    return this.musicaRepository.findAll();
+    return this.musicaRepository.getAll();
   }
 
   @Post('/musicas')

@@ -9,7 +9,7 @@ export class MusicaRepository {
   ) {}
 
   // busca todas as músicas
-  async findAll(): Promise<any> {
+  async getAll(): Promise<any> {
     console.log('tenta conectar');
     const client = await this.pool.connect(); // Use connect() para obter uma conexão do pool
     try {

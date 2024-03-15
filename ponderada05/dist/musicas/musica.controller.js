@@ -17,7 +17,7 @@ let MusicasController = class MusicasController {
         this.musicaRepository = musicaRepository;
     }
     async getAll() {
-        return this.musicaRepository.findAll();
+        return this.musicaRepository.getAll();
     }
     async create(req, res) {
         const { data } = req.body;
