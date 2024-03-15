@@ -1,4 +1,5 @@
 import styles from "./page.module.css";
+import { useEffect } from "react";
 import { useState } from "react";
 import { MusicService } from "../service/musicas";
 import Link from "next/link"; // Importe o componente Link do Next.js
