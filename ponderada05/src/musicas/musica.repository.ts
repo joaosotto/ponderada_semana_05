@@ -17,7 +17,7 @@ export class MusicaRepository {
       const result: QueryResult = await this.pool.query(
         'SELECT * FROM public.musicas',
       );
-      console.log('musicas cadastradas:', result);
+      console.log('musicas cadastradas:', result.rows);
       return result.rows;
     } finally {
       console.log('fecha conexão com banco');

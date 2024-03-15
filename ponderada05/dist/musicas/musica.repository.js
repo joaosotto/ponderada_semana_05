@@ -25,7 +25,7 @@ let MusicaRepository = class MusicaRepository {
         try {
             console.log('conectou no banco');
             const result = await this.pool.query('SELECT * FROM public.musicas');
-            console.log('musicas cadastradas:', result);
+            console.log('musicas cadastradas:', result.rows);
             return result.rows;
         }
         finally {
