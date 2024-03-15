@@ -6,8 +6,8 @@ dotenv.config();
 
 async function bootstrap() {
   const app = await NestFactory.create(MusicaModule);
-  await app.listen(5500);
-
+  await app.listen(5500)
+  app.enableCors({origin: true});
   console.log('http://localhost:5500/musicas');
 }
 bootstrap();
