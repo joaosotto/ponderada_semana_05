@@ -9,7 +9,9 @@ function ListaDeMusicas() {
     const fetchMusicas = async () => {
       try {
         // Ajuste o endereço conforme necessário, aqui estamos usando o mesmo domínio e porta
-        const response = await fetch("http://127.0.0.1:5500/musicas");
+        const response = await fetch(
+          "http://ec2-35-175-65-215.compute-1.amazonaws.com:5500/musicas"
+        );
         if (!response.ok) {
           throw new Error("Dados não puderam ser carregados");
         }
