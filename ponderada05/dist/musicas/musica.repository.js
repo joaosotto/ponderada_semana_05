@@ -41,7 +41,7 @@ let MusicaRepository = class MusicaRepository {
             const query = 'INSERT INTO public.musicas (nome, cantor, data, visualizacoes) VALUES ($1, $2, $3, $4) RETURNING *';
             const values = [nome, cantor, data, visualizacoes];
             const result = await client.query(query, values);
-            return result;
+            return result.rows;
         }
         catch (error) {
             console.error('Erro ao criar música:', error);
