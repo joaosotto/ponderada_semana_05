@@ -9,7 +9,7 @@ function ListaDeMusicas() {
     const fetchMusicas = async () => {
       try {
         // Ajuste o endereço conforme necessário, aqui estamos usando o mesmo domínio e porta
-        const response = await fetch("localhost:3000/musicas");
+        const response = await fetch("localhost:5500/musicas");
         if (!response.ok) {
           throw new Error("Dados não puderam ser carregados");
         }
@@ -23,6 +23,7 @@ function ListaDeMusicas() {
     fetchMusicas();
   }, []); // O array vazio garante que o efeito será executado apenas uma vez após o primeiro render
 
+  console.log(musicas);
   if (musicas.length > 0) {
     return (
       <div className="musicas_encontradas">
