@@ -16,8 +16,18 @@ let MusicasController = class MusicasController {
     constructor(musicaRepository) {
         this.musicaRepository = musicaRepository;
     }
-    getAll() {
+    async getAll() {
         return this.musicaRepository.findAll();
+    }
+    async create(req, res) {
+        const { data } = req.body;
+        try {
+            const novaMusica = await this.musicaRepository.create(data);
+            return novaMusica;
+        }
+        catch (error) {
+            console.error('Erro ao criar música:', error);
+        }
     }
 };
 exports.MusicasController = MusicasController;
@@ -25,8 +35,14 @@ __decorate([
     (0, common_1.Get)('/musicas'),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
-    __metadata("design:returntype", Object)
+    __metadata("design:returntype", Promise)
 ], MusicasController.prototype, "getAll", null);
+__decorate([
+    (0, common_1.Post)('/musicas'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Request, Response]),
+    __metadata("design:returntype", Promise)
+], MusicasController.prototype, "create", null);
 exports.MusicasController = MusicasController = __decorate([
     (0, common_1.Controller)(),
     __metadata("design:paramtypes", [musica_repository_1.MusicaRepository])

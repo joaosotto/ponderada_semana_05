@@ -6,7 +6,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 async function bootstrap() {
     const app = await core_1.NestFactory.create(musica_module_1.MusicaModule);
-    await app.listen(5500);
+    await app.listen(5050);
 }
 bootstrap();
 //# sourceMappingURL=main.js.map

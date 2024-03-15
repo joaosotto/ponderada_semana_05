@@ -32,6 +32,24 @@ let MusicaRepository = class MusicaRepository {
             client.release();
         }
     }
+    async create(data) {
+        const client = await this.pool.connect();
+        const novaMusicaData = data;
+        try {
+            const { nome, cantor, data, visualizacoes } = novaMusicaData;
+            const query = 'INSERT INTO public.musicas (nome, cantor, data, visualizacoes) VALUES ($1, $2, $3, $4) RETURNING *';
+            const values = [nome, cantor, data, visualizacoes];
+            const result = await client.query(query, values);
+            return result;
+        }
+        catch (error) {
+            console.error('Erro ao criar música:', error);
+            throw error;
+        }
+        finally {
+            client.release();
+        }
+    }
 };
 exports.MusicaRepository = MusicaRepository;
 exports.MusicaRepository = MusicaRepository = __decorate([
