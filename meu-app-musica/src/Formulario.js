@@ -13,13 +13,16 @@ function FormularioMusica() {
 
     try {
       // Envia uma requisição POST para o backend
-      const response = await fetch("http://localhost:3000/musicas", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ nome, cantor, dataLancamento, visualizacoes }),
-      });
+      const response = await fetch(
+        "http://http://ec2-52-91-146-65.compute-1.amazonaws.com:5500/musicas",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ nome, cantor, data, visualizacoes }),
+        }
+      );
 
       if (response.ok) {
         // Trata a resposta do servidor

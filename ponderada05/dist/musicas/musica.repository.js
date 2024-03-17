@@ -20,18 +20,7 @@ let MusicaRepository = class MusicaRepository {
         this.pool = pool;
     }
     async getAll() {
-        console.log('tenta conectar');
-        const client = await this.pool.connect();
-        try {
-            console.log('conectou no banco');
-            const result = await this.pool.query('SELECT * FROM public.musicas');
-            console.log('musicas cadastradas:', result.rows);
-            return result.rows;
-        }
-        finally {
-            console.log('fecha conexão com banco');
-            client.release();
-        }
+        return 'aaaaaaaaaaaaaaaaaaaaaaaa';
     }
     async create(data) {
         const client = await this.pool.connect();
